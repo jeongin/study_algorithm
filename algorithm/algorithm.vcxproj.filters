@@ -13,5 +13,13 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\baekjoon">
+      <UniqueIdentifier>{bfcb468e-50d9-4b02-a9a8-81c1dadebe4a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="6064.cpp">
+      <Filter>소스 파일\baekjoon</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
