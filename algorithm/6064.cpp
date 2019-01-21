@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 int main()
 {
 	int T;
@@ -19,14 +18,14 @@ int main()
 
 		if (x > N)
 		{
-			first_y = x & N;
+			first_y = x % N;
 		}
 		else
 		{
 			first_y = x;
 		}
 
-		check_y = first_y;
+		check_y = (first_y == 0) ? N : first_y;
 
 		while (1)
 		{
