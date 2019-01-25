@@ -3,11 +3,12 @@
 
 using namespace std;
 
+
 int main()
 {
-	// baekjoon 1912
+	// baekjoon 9252
 
-	
+;
 
 	return 0;
 }
