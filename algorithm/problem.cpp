@@ -5,15 +5,26 @@
 
 using namespace std;
 
+int node[100001];
+int p[100001];
+vector<int> adj[100001];
+
+void dfs(int cur, int par)
+{
+	p[cur] = par;
+	for (int i = 0; i < adj[cur].size(); i++)
+	{
+		int nxt = adj[cur][i];
+		if (nxt != par)
+			dfs(nxt, cur);
+	}
+}
+
 int main()
 {
 	ios::sync_with_stdio(false);
 
 	// baekjoon 11725
-
-	int node[100001];
-	int p[100001];
-	vector<int> adj[100001];
 
 	int N;
 	cin >> N;
@@ -26,28 +37,11 @@ int main()
 		adj[v].push_back(u);
 	}
 	
-	queue<int> q;
-	q.push(1);
-
-	while (!q.empty())
-	{
-		int parent = q.back(); q.pop();
-
-		for (int i = 0; i < adj[parent].size(); i++)
-		{
-			int child = adj[parent][i];
-
-			if (!p[child])
-			{
-				q.push(child);
-				p[child] = parent;
-			}
-		}
-	}
+	dfs(1, 0);
 
 	for (int i = 2; i <= N; i++)
 	{
-		cout << p[i] << endl;
+		cout << p[i] << "\n";
 	}
 
 	getchar();
