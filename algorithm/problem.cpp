@@ -9,10 +9,10 @@ int main()
 {
 	ios::sync_with_stdio(false);
 
-	// baekjoon 2250
+	// baekjoon 
+
 
 	getchar();
 	getchar();
-
 	return 0;
 }
