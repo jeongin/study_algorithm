@@ -5,10 +5,12 @@
 
 using namespace std;
 
+vector<int> figure[19];
+
 int main()
 {
 	ios::sync_with_stdio(false);
-	// baekjoon
+	// baekjoon 14500
 
 
 	getchar();
