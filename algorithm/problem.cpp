@@ -8,7 +8,7 @@ using namespace std;
 int main()
 {
 	ios::sync_with_stdio(false);
-	// baekjoon 
+	// samsung 5658
 
 	getchar();
 	getchar();
