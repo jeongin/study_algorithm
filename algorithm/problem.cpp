@@ -5,13 +5,11 @@
 
 using namespace std;
 
-
 int main()
 {
 	ios::sync_with_stdio(false);
-	// baekjoon 14501
+	// baekjoon 14502
 
-	
 
 	getchar();
 	getchar();
