@@ -8,9 +8,10 @@ using namespace std;
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	// 
+	// baekjoon 14888
 
+	int N;
+	scanf("%d", &N);
 
 	getchar();
 	getchar();
