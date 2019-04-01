@@ -6,10 +6,10 @@
 using namespace std;
 
 int N;
-int board[20][20];
+int board[21][21];
 int ans;
 
-void print_b(int bb[][20])
+void print_b(int bb[][21])
 {
 	printf("===========================\n");
 	for (int i = 0; i < N; i++)
@@ -22,7 +22,7 @@ void print_b(int bb[][20])
 	}
 }
 
-void copy_board(int a[][20], int b[][20])
+void copy_board(int a[][21], int b[][21])
 {
 	for (int i = 0; i < N; i++)
 	{
@@ -33,7 +33,7 @@ void copy_board(int a[][20], int b[][20])
 	}
 }
 
-void solve(int depth, int b[][20], int dir) // dir <- 0: À§ÂÊ 1: ¿À¸¥ÂÊ 2: ¾Æ·¡ÂÊ 3: ¿ÞÂÊ
+void solve(int depth, int b[][21], int dir) // dir <- 0: À§ÂÊ 1: ¿À¸¥ÂÊ 2: ¾Æ·¡ÂÊ 3: ¿ÞÂÊ
 {
 	//print_b(b);
 
@@ -50,7 +50,7 @@ void solve(int depth, int b[][20], int dir) // dir <- 0: À§ÂÊ 1: ¿À¸¥ÂÊ 2: ¾Æ·¡Â
 		return;
 	}
 
-	int tmp[20][20];
+	int tmp[21][21];
 	copy_board(b, tmp);
 
 	if (dir == 0) // À§ÂÊ
@@ -60,19 +60,27 @@ void solve(int depth, int b[][20], int dir) // dir <- 0: À§ÂÊ 1: ¿À¸¥ÂÊ 2: ¾Æ·¡Â
 			int k = 0;
 			for (int j = 0; j < N - 1; j++)
 			{
-				if (tmp[j][i] == tmp[j + 1][i])
+				if (tmp[j][i] == tmp[j + 1][i] && tmp[j][i] != 0)
 				{
 					tmp[k][i] = tmp[j][i] * 2;
+					tmp[j + 1][i] = 0;
 					j++;
+					k++;
 				}
-				else
+				else if(tmp[j][i] != 0)
 				{
 					tmp[k][i] = tmp[j][i];
+					k++;
 				}
+			}
+
+			if (tmp[N-1][i] != 0)
+			{
+				tmp[k][i] = tmp[N-1][i];
 				k++;
 			}
 
-			for (int j = k + 1; j < N; j++)
+			for (int j = k; j < N; j++)
 			{
 				tmp[j][i] = 0;
 			}
@@ -85,19 +93,27 @@ void solve(int depth, int b[][20], int dir) // dir <- 0: À§ÂÊ 1: ¿À¸¥ÂÊ 2: ¾Æ·¡Â
 			int k = N - 1;
 			for (int j = N-1; j > 0; j--)
 			{
-				if (tmp[i][j] == tmp[i][j-1])
+				if (tmp[i][j] == tmp[i][j-1] && tmp[i][j] != 0)
 				{
 					tmp[i][k] = tmp[i][j] * 2;
+					tmp[i][j - 1] = 0;
 					j--;
+					k--;
 				}
-				else
+				else if(tmp[i][j] != 0)
 				{
 					tmp[i][k] = tmp[i][j];
+					k--;
 				}
+			}
+			
+			if (tmp[i][0] != 0)
+			{
+				tmp[i][k] = tmp[i][0];
 				k--;
 			}
 
-			for (int j = k - 1; j >= 0; j--)
+			for (int j = k; j >= 0; j--)
 			{
 				tmp[i][j] = 0;
 			}
@@ -110,19 +126,27 @@ void solve(int depth, int b[][20], int dir) // dir <- 0: À§ÂÊ 1: ¿À¸¥ÂÊ 2: ¾Æ·¡Â
 			int k = N - 1;
 			for (int j = N-1; j > 0; j--)
 			{
-				if (tmp[j][i] == tmp[j - 1][i])
+				if (tmp[j][i] == tmp[j - 1][i] && tmp[j][i] != 0)
 				{
 					tmp[k][i] = tmp[j][i] * 2;
+					tmp[j - 1][i] = 0;
 					j--;
+					k--;
 				}
-				else
+				else if(tmp[j][i] != 0)
 				{
 					tmp[k][i] = tmp[j][i];
+					k--;
 				}
+			}
+
+			if (tmp[0][i] != 0)
+			{
+				tmp[k][i] = tmp[0][i];
 				k--;
 			}
 
-			for (int j = k - 1; j >= 0; j--)
+			for (int j = k; j >= 0; j--)
 			{
 				tmp[j][i] = 0;
 			}
@@ -136,26 +160,34 @@ void solve(int depth, int b[][20], int dir) // dir <- 0: À§ÂÊ 1: ¿À¸¥ÂÊ 2: ¾Æ·¡Â
 			int k = 0;
 			for (int j = 0; j < N-1; j++)
 			{
-				if (tmp[i][j] == tmp[i][j + 1])
+				if (tmp[i][j] == tmp[i][j + 1] && tmp[i][j] != 0)
 				{
 					tmp[i][k] = tmp[i][j] * 2;
+					tmp[i][j + 1] = 0;
 					j++;
+					k++;
 				}
-				else
+				else if(tmp[i][j] != 0)
 				{
 					tmp[i][k] = tmp[i][j];
+					k++;
 				}
+			}
+
+			if (tmp[i][N - 1] != 0)
+			{
+				tmp[i][k] = tmp[i][N - 1];
 				k++;
 			}
 
-			for (int j = k - 1; j >= 0; j--)
+			for (int j = k; j >= 0; j--)
 			{
 				tmp[i][j] = 0;
 			}
 		}
 	}
 
-	int new_board[20][20];
+	int new_board[21][21];
 	for (int i = 0; i < 4; i++)
 	{
 		copy_board(tmp, new_board);
