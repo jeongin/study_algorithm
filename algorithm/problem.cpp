@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-	// baekjoon 14238
+	// baekjoon 12869
 
 	getchar();
 	getchar();
