@@ -1,11 +1,10 @@
 #include <iostream>
 #include <algorithm>
-#include <vector>
 
 using namespace std;
 
 int main() {
-	// baekjoon 16236
+	// baekjoon 
 
 	getchar();
 	getchar();
