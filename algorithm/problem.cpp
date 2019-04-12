@@ -4,7 +4,11 @@
 using namespace std;
 
 int main(int argc, char** argv) {
-	// 
+	// samsung 
+
+	freopen("sample_input.txt", "r", stdin);
+	
+
 
 	getchar();
 	getchar();
