@@ -41,12 +41,12 @@ void row()
 
 		sort(v.begin(), v.end());
 
-//		printf("[%d row]\n", i);
+		//		printf("[%d row]\n", i);
 		for (int j = 0; j < v.size(); j++)
 		{
 			arr[i][2 * j] = v[j].second;
 			arr[i][2 * j + 1] = v[j].first;
-//			printf("[num %d]: %d\n", v[j].second, v[j].first);
+			//			printf("[num %d]: %d\n", v[j].second, v[j].first);
 		}
 
 		for (int j = v.size() * 2; j < c_size; j++)
@@ -94,12 +94,12 @@ void col()
 
 		sort(v.begin(), v.end());
 
-//		printf("[%d col]\n", i);
+		//		printf("[%d col]\n", i);
 		for (int j = 0; j < v.size(); j++)
 		{
 			arr[j * 2][i] = v[j].second;
 			arr[j * 2 + 1][i] = v[j].first;
-//			printf("[num %d]: %d\n", v[j].second, v[j].first);
+			//			printf("[num %d]: %d\n", v[j].second, v[j].first);
 		}
 
 		for (int j = v.size() * 2; j < r_size; j++)
