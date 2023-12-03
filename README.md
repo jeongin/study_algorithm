@@ -1,2 +1,2 @@
-# study_algorithm(BOJ/SAMSUNG)
-solve algorithm problem by c++
+# study_algorithm
+solve algorithm problem by python, c++
