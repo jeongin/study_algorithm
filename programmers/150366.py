@@ -1,3 +1,5 @@
+# 2023 kakao blind recruitment > 표 병합
+# https://school.programmers.co.kr/learn/courses/30/lessons/150366
 empty = "EMPTY"
 parent = [[(r, c) for c in range(51)] for r in range(51)]
 table = [[empty] * 51 for _ in range(51)]

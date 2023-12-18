@@ -1,3 +1,5 @@
+# 2023 kakao blind recruitment > 표현 가능한 이진트리
+# https://school.programmers.co.kr/learn/courses/30/lessons/150367
 def dfs(b, i, length):
     if length == 0:
         return True
